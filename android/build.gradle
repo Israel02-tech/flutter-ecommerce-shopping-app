@@ -1,0 +1,33 @@
+buildscript {
+    ext.kotlin_version = '2.0.0' // Added to specify the Kotlin version
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Add this line
+        classpath 'com.google.gms:google-services:4.3.15' // Check for the latest version
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    // Add this line to enable lint for deprecation
+    //compilerArgs += "-Xlint:deprecation"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
