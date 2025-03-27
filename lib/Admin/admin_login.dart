@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_shopping_app/Admin/add_product.dart';
 import 'package:ecommerce_shopping_app/Admin/home_admin.dart';
 import 'package:flutter/material.dart';
 import '../widget/support_widget.dart';
@@ -14,6 +13,14 @@ class AdminLogin extends StatefulWidget {
 class _AdminLoginState extends State<AdminLogin> {
   TextEditingController usernamecontroller = TextEditingController();
   TextEditingController userpasswordcontroller = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    usernamecontroller;
+    userpasswordcontroller;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

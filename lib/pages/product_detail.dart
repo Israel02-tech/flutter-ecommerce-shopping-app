@@ -256,7 +256,7 @@ class _ProductDetailState extends State<ProductDetail> {
       return jsonDecode(response.body);
     } catch (err) {
       print("Error creating payment intent: ${err.toString()}");
-      throw err;
+      rethrow;
     }
   }
 }

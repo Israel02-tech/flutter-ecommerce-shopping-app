@@ -1,5 +1,4 @@
 import 'package:ecommerce_shopping_app/pages/login.dart';
-import 'package:ecommerce_shopping_app/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatefulWidget {

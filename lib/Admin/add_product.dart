@@ -128,7 +128,9 @@ class _AddProductState extends State<AddProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "Add Product",
@@ -139,16 +141,9 @@ class _AddProductState extends State<AddProduct> {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Container(
-            margin: EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color.fromARGB(255, 247, 245, 239),
-            ),
-            child: Icon(
-              Icons.arrow_back_ios_new_sharp,
-              color: Color.fromARGB(255, 0, 0, 0),
-            ),
+          child: Icon(
+            Icons.arrow_back_ios_new_sharp,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
       ),

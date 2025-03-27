@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_shopping_app/widget/support_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../services/database.dart';
@@ -116,26 +115,29 @@ class _AllOrdersState extends State<AllOrders> {
                               color: Colors.grey,
                             ),
                           ),
-                          GestureDetector(
-                            onTap: () async {
-                              await DatabaseMethods().updateStatus(ds.id);
-                              setState(() {});
-                            },
-                            child: Container(
-                              margin: EdgeInsets.only(left: 30, top: 10),
-                              width: 100,
-                              padding: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 213, 55, 2),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Done",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: GestureDetector(
+                              onTap: () async {
+                                await DatabaseMethods().updateStatus(ds.id);
+                                setState(() {});
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(left: 30, top: 10),
+                                width: 100,
+                                padding: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color.fromARGB(255, 213, 55, 2),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "Done",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -157,6 +159,7 @@ class _AllOrdersState extends State<AllOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 5,

@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
 
   var queryResultSet = [];
   var tempSearchStore = [];
-  TextEditingController searchcontroller = new TextEditingController();
+  TextEditingController searchcontroller = TextEditingController();
 
   initiateSearch(value) {
     if (value.length == 0) {
@@ -62,13 +62,13 @@ class _HomeState extends State<Home> {
       });
     } else {
       tempSearchStore = [];
-      queryResultSet.forEach((element) {
+      for (var element in queryResultSet) {
         if (element["UpdatedName"].startsWith(CapitalizedValue)) {
           setState(() {
             tempSearchStore.add(element);
           });
         }
-      });
+      }
     }
   }
 

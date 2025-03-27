@@ -14,18 +14,17 @@ class _HomeAdminState extends State<HomeAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff2f2f2),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xfff2f2f2),
+        backgroundColor: Colors.white,
         elevation: 0,
-        title: Center(
-          child: Text(
-            "Home Admin",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+        centerTitle: true,
+        title: Text(
+          "Home Admin",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
           ),
         ),
         iconTheme: IconThemeData(color: Colors.black),
@@ -34,6 +33,7 @@ class _HomeAdminState extends State<HomeAdmin> {
         margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 60),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
               onTap: () {
